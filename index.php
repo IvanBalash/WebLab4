@@ -46,6 +46,21 @@
                             <li><button class="settings-button">другое</button></li>
                         </ul>
                     </div>
+
+
+                        <?php
+                        if(isset($_SESSION['auth'])) {
+
+                            if ($_SESSION['access'] == 1) {
+                                $url = getUrl('newProduct');
+                                echo '<div class=' . "settings-block" . '>';
+                                echo "<a href='" . $url . "'>создать новый продукт</a>";
+                                echo "</div>";
+                            }
+                        }
+                        ?>
+
+
                 </div>
                 <div id="goods">
                     <ul>

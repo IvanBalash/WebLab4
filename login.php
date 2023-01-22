@@ -48,9 +48,9 @@
         ?>
         <div id="log_section">
             <form action="login.php" method="POST">
-                <input class="str_input" type="text" name="login-input" placeholder="login" required/><br/>
-                <input class="str_input" type="password" name="pass" placeholder="password" required/><br/>
-                <input class="sbmt_input" type="submit" value="login">
+                <input class="str_input" type="text" name="login-input" placeholder="Логин" required/><br/>
+                <input class="str_input" type="password" name="pass" placeholder="Пароль" required/><br/>
+                <input class="sbmt_input" type="submit" value="Войти">
                 <?php
                     if(isset($errMessage)){
                         echo '<p style = "color: red; width: 100%; text-align: center;margin: 0;">'. $errMessage . '</p>';
@@ -59,7 +59,7 @@
             </form>
 
             <ul id="other_ways">
-                <li><a href="<?php echo getUrl('registration'); ?>">registration</a></li>
+                <li><a href="<?php echo getUrl('registration'); ?>">Зарегистрироваться</a></li>
             </ul>
         </div>
 

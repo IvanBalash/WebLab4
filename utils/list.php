@@ -8,6 +8,7 @@
             'db' => 'utils/DBmanager.php',
             'err' => 'utils/ErrorsCollector.php',
             'home' => 'index.php',
+            'newProduct' => 'create_product.php',
             'registration' => 'signup.php',
             'login' => 'login.php',
             'cabinet' => 'user_page.php',

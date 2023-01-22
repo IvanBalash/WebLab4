@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/Main_style.css" >
     <link rel="stylesheet" href="styles/Footer_style.css" >
     <link rel="stylesheet" href="styles/forme_style.css" >
+
     <title>registration</title>
 </head>
 <body>

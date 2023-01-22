@@ -1,26 +1,92 @@
 #account_info{
-    width: 70%;
+    width: 80%;
     display: flex;
-
+    flex-wrap: wrap;
+}
+#account_info h2{
+    width: 100%;
+    margin-bottom: 30px;
 }
 
-#account_info div{
-    width: 60%;
+#account_info form{
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-#left_side{
-    width: 40%;
+#account_info form div{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#account_info form div label{
+    width: 20%;
+    margin: 0;
+    text-align: center;
+}
+#account_info form div input{
+    width: 100%;
+    margin: 0;
 }
 
 #user_page_block{
     display: flex;
     flex-wrap: nowrap;
     justify-content: end;
+    padding-top: 40px;
+}
 
+
+.cab_btn{
+    width: 40%;
+}
+
+
+#exit{
+    height: 40px;
+    width: 90%;
+    padding: 0;
+}
+#exit input{
+    height: 40px;
+    width: 100%;
 }
 
 #user_control_panel{
+    background-color: #DBE1BD;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+
+#user_control_panel ul{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    padding-top: 10px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px ;
+
+}
+
+#user_control_panel ul li{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#user_control_panel ul li a{
+    width: 90%;
+    height: 40px;
+    background-color: #FEFAED;
+    border-radius: 15px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
 }
