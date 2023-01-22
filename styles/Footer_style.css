@@ -1,0 +1,100 @@
+footer {
+    width: 94%;
+    margin: 0 3%;
+}
+
+#delivery {
+    margin-top: 20px;
+    background-color: #E9EDC9;
+    width: 106.4%;
+    min-width: 253px;
+    margin-left: -3.2%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#delivery h1 {
+    width:90%;
+    min-width:252px;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: center;
+}
+
+.delivery-method{
+    width:45%;
+    min-width:250px;
+}
+
+.delivery-method h2 {
+    width: 100%;
+    text-align: center;
+    background-color: #DFC89E;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.delivery-method p{
+    width:95%;
+    margin:0 10px;
+    margin-bottom:20px;
+}
+
+#info {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+#info h2{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.info-block {
+    width: 25%;
+    min-width:150px;
+    
+    background-color: #DBE1BD;
+    border-radius: 10px;
+    margin-bottom:10px;
+}
+.info-block p {
+    width: 90%;
+    margin-left: 10%;
+}
+
+.last-info-block {
+    width: 45%;
+    min-width: 250px;
+}
+
+.last-info-block ul {
+    display: flex;
+    list-style: none;
+    margin-left: 10%;
+    padding:0;
+}
+
+.last-info-block ul li {
+    width: 30px;
+    height:30px;
+    margin-right: 10px;
+    
+}
+
+.last-info-block ul li a img {
+    width: 30px;
+    height: 30px;
+}
+
+#end {
+    margin-top:25px;
+    width: 106.4%;
+    height: 35px;
+    margin-left: -3.2%;
+    background-color: #DBE1BD;
+}
