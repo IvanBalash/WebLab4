@@ -30,9 +30,14 @@
                     $row = $result->fetch_array();
                     if($row["password"] === md5($pass . "spider_man")){
                         session_start();
+                        $_SESSION['auth'] = true;
                         $_SESSION['id'] = $row["id"];
                         $_SESSION['name'] = $row["name"];
                         $_SESSION['login'] = $row["login"];
+                        $_SESSION['access'] = $row["access"];
+
+                        header ( 'Location: '. getUrl('home') );  // перенаправление на нужную страницу
+                        exit();
                     }
                 }
                 else{

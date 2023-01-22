@@ -4,6 +4,7 @@
         $base_url = "../web/";
 
         $urls = [
+            'exit' => 'utils/exit.php',
             'db' => 'utils/DBmanager.php',
             'err' => 'utils/ErrorsCollector.php',
             'home' => 'index.php',

@@ -8,16 +8,17 @@
 </div>
 <div class="menu-block">
     <div id="up-menu">
-        <div class="search">
-            <input type="text" name="serchform" id="main-search" />
-            <button id="run-search">Поиск</button>
-        </div>
+        <form class="search" action="search.php" method="POST">
+            <input type="text" name="search_query" id="main-search" />
+            <input type="submit" value="поиск" id="run-search">
+        </form>
         <div class="cabinet">
             <a href="<?php
-                    if(session_status() == PHP_SESSION_ACTIVE){
+                    if(isset($_SESSION['auth'])){
                         echo getUrl('cabinet');
                     }
                     else{
+                        session_destroy();
                         echo getUrl('login');
                     }
                      ?>"><img src="images/cabinet.png"></a>
@@ -33,8 +34,22 @@
                     <li><a href="<?php echo $url; ?>#contacts" class="navigation">контакты</a></li>
                 </ul></li>
             <li id="line"></li>
-            <li id="menu-icons"><a href="<?php echo getUrl('liked'); ?>"><img src="images/liked.png"></a></li>
-            <li id="menu-icons"><a href="<?php echo getUrl('cart'); ?>"><img src="images/cart.png"></a></li>
+            <li id="menu-icons"><a href="<?php
+                if(isset($_SESSION['auth'])){
+                    echo getUrl('liked');
+                }
+                else{
+                    echo getUrl('login');
+                }
+                ?>"><img src="images/liked.png"></a></li>
+            <li id="menu-icons"><a href="<?php
+                if(isset($_SESSION['auth'])){
+                    echo getUrl('cart');
+                }
+                else{
+                    echo getUrl('login');
+                }
+                ?>"><img src="images/cart.png"></a></li>
         </ul>
     </div>
 </div>

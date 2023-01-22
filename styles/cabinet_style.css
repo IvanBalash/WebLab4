@@ -1,0 +1,26 @@
+#account_info{
+    width: 70%;
+    display: flex;
+
+}
+
+#account_info div{
+    width: 60%;
+    margin: 0;
+    display: flex;
+}
+
+#left_side{
+    width: 40%;
+}
+
+#user_page_block{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: end;
+
+}
+
+#user_control_panel{
+    display: flex;
+}

@@ -40,6 +40,18 @@
                         $query = "INSERT INTO `users`( `login`, `password`, `name`) VALUES ('$login','" .
                             md5($pass . "spider_man") . "','$name');";
                         $result = $db->query($query);
+                        $query ="SELECT * FROM users WHERE login = '$login';";
+                        $result = $db->query($query);
+                        $row = $result->fetch_array();
+                        session_start();
+                        $_SESSION['auth'] = true;
+                        $_SESSION['id'] = $row["id"];
+                        $_SESSION['name'] = $row["name"];
+                        $_SESSION['login'] = $row["login"];
+                        $_SESSION['access'] = $row["access"];
+
+                        header ( 'Location: '. getUrl('home') );  // перенаправление на нужную страницу
+                        exit();
                     }
                 }
             }

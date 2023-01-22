@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="styles/Header_style.css" >
     <link rel="stylesheet" href="styles/Main_style.css" >
     <link rel="stylesheet" href="styles/Footer_style.css" >
-    <title>Shop</title>
+    <title><?php if(isset($_SESSION['id'])){
+                    echo $_SESSION['name'];
+                }
+                else{
+                    echo "shop";
+                }?></title>
 </head>
 <body>
     <div id="frame">
@@ -49,159 +54,30 @@
                 </div>
                 <div id="goods">
                     <ul>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <img src="images/images.jpg">
-                                <p>Name</p>
-                                <button class="buy-button">Купить</button>
-                            </div>
-                        </li>
+                        <?php
+                            $db = new DBmanager();
+                            $db->conect();
+                            $query ="SELECT * FROM products";
+                            $result = $db->query($query);
+                            echo $result->num_rows;
+                            foreach ($result->fetch_array() as $row){
+                            ?>
+                                <li>
+                                    <div>
+                                        <img src="images/images.jpg">
+                                        <p>100</p>
+                                        <p>lol</p>
+                                        <button class="buy-button">Купить</button>
+                                    </div>
+                                </li>
+                            <?php } ?>
+
                     </ul>
                 </div>
             </div>
         </main>
         <footer>
-            <div id="delivery"><a name="deliv"></a>
+            <div id="delivery"><a id="deliv"></a>
                 <h1>Способы доставки</h1>
                 <div class="delivery-method">
                     <h2>Самовывоз</h2>

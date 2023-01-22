@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 
 <html>
@@ -6,6 +7,9 @@
     <link rel="stylesheet" href="styles/Header_style.css" >
     <link rel="stylesheet" href="styles/Main_style.css" >
     <link rel="stylesheet" href="styles/Footer_style.css" >
+
+    <link rel="stylesheet" href="styles/cabinet_style.css_style.css" >
+
     <title>Shop</title>
 </head>
 <body>
@@ -14,21 +18,38 @@
         <?php require_once('header.php')?>
     </header>
     <main>
-        <?php
-        if($_SERVER['REQUEST_METHOD']=='POST'){
-            $login = $_POST['login-input'];
-            $pass = $_POST['pass'];
+        <div id="user_page_block">
+            <div id="account_info">
+                <h2>Информация об аккаунте:</h2>
+                <div id="left_side">
+                    <label for="name-input">Имя:</label>
+                    <label for="login-input">Логин:</label>
+                    <label for="oldPass">Пароль:</label>
+                    <label for="newPass">новый пароль:</label>
+                </div>
+                <div>
+                    <form action="login.php" method="POST">
+                        <input class="str_input" type="text" name="name-input" placeholder="<?php
+                            echo $_SESSION['name'];
+                        ?>" />
+                        <input class="str_input" type="text" name="login-input" placeholder="<?php
+                            echo $_SESSION['login'];
+                        ?>" />
+                        <input class="str_input" type="password" name="oldPass" minlength="8" />
+                        <input class="str_input" type="password" name="newPass" minlength="8" />
+                        <input class="sbmt_input" type="submit" value="Применить">
+                    </form>
+                </div>
+            </div>
+            <div id="user_control_panel">
+                <a href="#">редактировать товары</a>
+                <a href="<?php echo getUrl('login') ?>">войти под другим аккаунтом</a>
 
-            echo $login . ' ' . $pass;
-        }
-        ?>
-        <form action="/login.php" method="POST">
-            <input type="text" name="login-input" placeholder="login"/><br/>
-            <input type="password" name="pass" placeholder="password"/><br/>
-            <input type="submit" vlaue="login">
-        </form>
-        <div id="options">
-            <button name="registration">registration</button>
+                <form action="<?= getUrl('exit')?>" method="POST">
+                    <input type="submit" value="выйти" />
+                </form>
+
+            </div>
         </div>
 
     </main>
