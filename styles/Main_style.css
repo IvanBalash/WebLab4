@@ -117,12 +117,10 @@ a{
     padding: 0;
     margin:0;
     width:100%;
-    overflow: hidden;
-    height: 460px;
     list-style: none;
     align-items:center;
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
     flex-wrap: wrap;
 }
 #goods ul li{

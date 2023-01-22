@@ -8,12 +8,7 @@
     <link rel="stylesheet" href="styles/Header_style.css" >
     <link rel="stylesheet" href="styles/Main_style.css" >
     <link rel="stylesheet" href="styles/Footer_style.css" >
-    <title><?php if(isset($_SESSION['id'])){
-                    echo $_SESSION['name'];
-                }
-                else{
-                    echo "shop";
-                }?></title>
+    <title>Shop</title>
 </head>
 <body>
     <div id="frame">
@@ -59,19 +54,17 @@
                             $db->conect();
                             $query ="SELECT * FROM products";
                             $result = $db->query($query);
-                            echo $result->num_rows;
-                            foreach ($result->fetch_array() as $row){
+                            foreach ($result as $row){
                             ?>
                                 <li>
                                     <div>
                                         <img src="images/images.jpg">
-                                        <p>100</p>
-                                        <p>lol</p>
+                                        <p><?= $row['NAME']?></p>
+                                        <p><?= $row['price']?></p>
                                         <button class="buy-button">Купить</button>
                                     </div>
                                 </li>
                             <?php } ?>
-
                     </ul>
                 </div>
             </div>
