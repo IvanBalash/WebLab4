@@ -24,22 +24,28 @@
                     $db->conect();
                     $id = $_SESSION['id'];
                     $query ="SELECT * FROM products WHERE id IN (SELECT product_id FROM liked WHERE user_id = '$id');";
-                    $result = $db->query($query);   foreach ($result as $row){
-                    $productId = $row['id'];
-                    ?>
-                    <li>
-                        <h1><?= $row['NAME']?></h1>
-                        <div>
-                            <img src="images/images.jpg" alt="name-input">
-                                <p class="description"><?= $row['description']?></p>
-                        </div>
-                        <h2>Цена: <?= $row['price']?></h2>
-                        <form action="utils/add_to_cart.php" method="POST">
-                            <button value="<?= $productId?>" name="cart" class="buy-button">в корзину</button>
-                        </form>
+                    $result = $db->query($query);
+                    if($result->num_rows > 0){
+                        foreach ($result as $row){
+                            $productId = $row['id'];
+                            ?>
+                            <li>
+                                <h1><?= $row['NAME']?></h1>
+                                <div>
+                                    <img src="images/images.jpg" alt="name-input">
+                                        <p class="description"><?= $row['description']?></p>
+                                </div>
+                                <h2>Цена: <?= $row['price']?></h2>
+                                <form action="utils/add_to_cart.php" method="POST">
+                                    <button value="<?= $productId?>" name="cart" class="buy-button">в корзину</button>
+                                </form>
 
-                    </li>
-                <?php } ?>
+                            </li>
+                        <?php }
+                    }
+                    else{
+                        echo "<h1>У вас пока нет ничего в понравившемся</h1>";
+                    }?>
             </ul>
         </div>
     </main>

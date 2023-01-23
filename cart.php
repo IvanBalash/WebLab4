@@ -24,18 +24,24 @@
                 $db = new DBmanager();
                 $db->conect();
                 $id = $_SESSION['id'];
-                $query ="SELECT * FROM products WHERE id IN (SELECT product_id FROM liked WHERE user_id = '$id');";
-                $result = $db->query($query);   foreach ($result as $row){
-                    ?>
-                    <li>
-                        <h1><?= $row['NAME']?></h1>
-                        <div>
-                            <img src="images/images.jpg" alt="name-input">
-                            <p class="description"><?= $row['description']?></p>
-                        </div>
-                        <h2>Цена: <?= $row['price']?></h2>
-                    </li>
-                <?php } ?>
+                $query ="SELECT * FROM products WHERE id IN (SELECT product_id FROM cart WHERE user_id = '$id');";
+                $result = $db->query($query);
+                if($result->num_rows > 0){
+                    foreach ($result as $row){
+                        ?>
+                        <li>
+                            <h1><?= $row['NAME']?></h1>
+                            <div>
+                                <img src="images/images.jpg" alt="name-input">
+                                <p class="description"><?= $row['description']?></p>
+                            </div>
+                            <h2>Цена: <?= $row['price']?></h2>
+                        </li>
+                    <?php }
+                }
+                else{
+                    echo "<h1>У вас пока нет ничего в корзине</h1>";
+                }?>
             </ul>
         </div>
     </main>
