@@ -63,7 +63,11 @@ label{
     border-radius: 10px;
     font-size: 20px;
 }
-
+#description{
+    width: 90%;
+    height: 400px;
+    resize: none;
+}
 .sbmt_input{
     width: 25%;
     height: 30px;
@@ -75,4 +79,5 @@ label{
     align-items: center;
     border: none;
 }
+
 

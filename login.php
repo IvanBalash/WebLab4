@@ -39,6 +39,9 @@
                         header ( 'Location: '. getUrl('home') );  // перенаправление на нужную страницу
                         exit();
                     }
+                    else{
+                        $errors->addError("Неверный пароль");
+                    }
                 }
                 else{
                     $errors->addError("Такого пользователя не существует");

@@ -9,6 +9,7 @@
             'err' => 'utils/ErrorsCollector.php',
             'home' => 'index.php',
             'newProduct' => 'create_product.php',
+            'changeProduct' => 'change_product.php',
             'registration' => 'signup.php',
             'login' => 'login.php',
             'cabinet' => 'user_page.php',

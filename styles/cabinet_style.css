@@ -1,5 +1,5 @@
 #account_info{
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -34,9 +34,10 @@
 }
 
 #user_page_block{
+
     display: flex;
     flex-wrap: nowrap;
-    justify-content: end;
+    justify-content: space-between;
     padding-top: 40px;
 }
 
@@ -57,9 +58,10 @@
 }
 
 #user_control_panel{
+    width: 25%;
     background-color: #DBE1BD;
     border-radius: 15px;
-    margin-left: 5px;
+
 }
 
 #user_control_panel ul{

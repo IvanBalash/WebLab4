@@ -1,22 +1,5 @@
 ﻿<?php session_start(); ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 
 <html>
@@ -87,13 +70,35 @@
                             $query ="SELECT * FROM products";
                             $result = $db->query($query);
                             foreach ($result as $row){
+                                $id = $row['id'];
                             ?>
+                                <a id="<?= $id?>"></a>
                                 <li>
                                     <div>
+
                                         <img src="images/images.jpg">
                                         <p><?= $row['NAME']?></p>
                                         <p><?= $row['price']?></p>
-                                        <button class="buy-button">Купить</button>
+                                        <form action="utils/add_to_cart.php" method="POST">
+                                            <button value="<?= $id?>" name="cart" class="buy-button">в карзину</button>
+                                        </form>
+                                        <form action="utils/add_to_liked.php" method="POST">
+                                            <button value="<?= $id?>" name="like" class="buy-button del">like</button>
+                                        </form>
+                                        <?php
+                                            if(isset($_SESSION['auth'])) {
+                                                if ($_SESSION['access'] == 1) {
+                                                    $url = getUrl('changeProduct');
+                                                    echo "<form action=" . "utils/go_to_change_product.php" . " method='GET'>";
+                                                    echo "<button value='$id' name='chn' class='" ."buy-button del"."' >изменить</button>";
+                                                    echo "</form>";
+                                                    echo "<form action=" . "utils/delete_product.php" . " method='POST'>";
+                                                    echo "<button value='$id' name='del' class='" ."buy-button del"."' >удалить</button>";
+                                                    echo "</form>";
+                                                }
+                                            }
+                                        ?>
+
                                     </div>
                                 </li>
                             <?php } ?>

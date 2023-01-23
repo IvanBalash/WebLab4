@@ -66,7 +66,7 @@ a{
 .settings-block {
     
     margin-top: 20px;
-    
+
     width: 90%;
     padding: 5%;
     background-color: #E9EDC9;
@@ -80,6 +80,12 @@ a{
     width: 90%;
     display: flex;
     flex-flow: column nowrap;
+}
+
+.settings-block a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .settings-block ul li {
@@ -125,7 +131,6 @@ a{
 }
 #goods ul li{
     padding: 10px;
-    height:190px;
     margin: 10px 5px;
     border-radius: 10px;
     background-color: #D0BC90;
@@ -196,3 +201,6 @@ h2{
     border-radius:5px;
 }
 
+.del{
+    margin-top: 10px;
+}
