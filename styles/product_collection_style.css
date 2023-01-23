@@ -1,0 +1,42 @@
+
+#product_collection li{
+    width: 100%;
+}
+#product_collection{
+    width: 100%;
+}
+#product_collection li h1{
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+#product_collection li div img{
+    width: 200px;
+    height: 200px;
+}
+
+#product_collection li div .description{
+    margin: 0;
+    width: 100%;
+
+    text-align: start;
+    padding-left: 20px;
+    font-size: 1.5em;
+
+}
+
+#product_collection li div{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+
+#product_collection li h2{
+    text-align: center;
+}
+#product_collection li form{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}

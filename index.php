@@ -76,15 +76,15 @@
                             foreach ($result as $row){
                                 $id = $row['id'];
                             ?>
-                                <a id="<?= $id?>"></a>
-                                <li>
+
+                                <li><a id="<?= $id?>"></a>
                                     <div>
 
                                         <img src="images/images.jpg" alt="nothing">
                                         <p><?= $row['NAME']?></p>
                                         <p><?= $row['price']?></p>
                                         <form action="utils/add_to_cart.php" method="POST">
-                                            <button value="<?= $id?>" name="cart" class="buy-button">в карзину</button>
+                                            <button value="<?= $id?>" name="cart" class="buy-button">в корзину</button>
                                         </form>
                                         <form action="utils/add_to_liked.php" method="POST">
                                             <button value="<?= $id?>" name="like" class="buy-button del">like</button>

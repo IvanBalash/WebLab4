@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/Header_style.css" >
     <link rel="stylesheet" href="styles/Main_style.css" >
     <link rel="stylesheet" href="styles/Footer_style.css" >
+    <link rel="stylesheet" href="styles/product_collection_style.css" >
 
     <title>in progress</title>
 </head>
@@ -17,22 +18,26 @@
     </header>
     <main>
         <div id="goods">
-            <ul>
+            <ul id="product_collection">
                 <?php
-                $db = new DBmanager();
-                $db->conect();
-                $id = $_SESSION['id'];
-                $query ="SELECT * FROM products WHERE id IN (SELECT product_id FROM liked WHERE user_id = '$id');";
-                $result = $db->query($query);
-                foreach ($result as $row){
+                    $db = new DBmanager();
+                    $db->conect();
+                    $id = $_SESSION['id'];
+                    $query ="SELECT * FROM products WHERE id IN (SELECT product_id FROM liked WHERE user_id = '$id');";
+                    $result = $db->query($query);   foreach ($result as $row){
+                    $productId = $row['id'];
                     ?>
                     <li>
+                        <h1><?= $row['NAME']?></h1>
                         <div>
                             <img src="images/images.jpg" alt="name-input">
-                            <p><?= $row['NAME']?></p>
-                            <p><?= $row['price']?></p>
-                            <button class="buy-button">Купить</button>
+                                <p class="description"><?= $row['description']?></p>
                         </div>
+                        <h2>Цена: <?= $row['price']?></h2>
+                        <form action="utils/add_to_cart.php" method="POST">
+                            <button value="<?= $productId?>" name="cart" class="buy-button">в корзину</button>
+                        </form>
+
                     </li>
                 <?php } ?>
             </ul>
