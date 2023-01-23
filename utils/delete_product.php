@@ -11,4 +11,4 @@
         header ( 'Location: '. '../' . getUrl('home'));
         exit();
     }
-?>
+

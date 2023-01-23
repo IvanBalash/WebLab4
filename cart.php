@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 
-<html>
+<html lang="ru">
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/Header_style.css" >
@@ -29,7 +29,7 @@
                     ?>
                     <li>
                         <div>
-                            <img src="images/images.jpg">
+                            <img src="images/images.jpg" alt="nothing">
                             <p><?= $row['NAME']?></p>
                             <p><?= $row['price']?></p>
                             <button class="buy-button">Купить</button>

@@ -1,13 +1,13 @@
 <?php
 
 class DBmanager{
-    private $server='localhost';
-    private $login = 'root';
-    private $password = '123';
-    private $dbname = 'phpmyadmin';
+    private string $server='localhost';
+    private string $login = 'root';
+    private string $password = '123';
+    private string $dbname = 'phpmyadmin';
     private $conection;
 
-    public function conect(){
+    public function conect(): void{
         $this->conection = new mysqli($this->server, $this->login, $this->password, $this->dbname);
 
     }
@@ -15,9 +15,5 @@ class DBmanager{
     public function query($query){
         return $this->conection->query($query);
     }
-    public function disconect(){
-        $this->conection->clouse();
-    }
 
 }
-?>

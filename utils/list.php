@@ -22,4 +22,4 @@
         return $base_url . $urls[$page_name];
     }
 
-?>
+

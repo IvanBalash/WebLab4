@@ -1,4 +1,4 @@
-<a name="contacts"></a>
+<a id="contacts"></a>
 <div id="info">
     <h2>Контактная информация</h2>
     <div class="info-block">
@@ -37,9 +37,9 @@
             ищите нас в соц.сетях:
         </p>
         <ul>
-            <li><a href="#"><img src="images/vk.png" /></a></li>
-            <li><a href="#"><img src="images/inst.png" /></a></li>
-            <li><a href="#"><img src="images/facebook.png" /></a></li>
+            <li><a href="#"><img src="images/vk.png"  alt="name-input"/></a></li>
+            <li><a href="#"><img src="images/inst.png" alt="name-input"/></a></li>
+            <li><a href="#"><img src="images/facebook.png" alt="name-input"/></a></li>
         </ul>
     </div>
 </div>

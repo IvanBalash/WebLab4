@@ -46,7 +46,7 @@
                 $row = $result->fetch_array();
             ?>
             <form action="change_product.php" method="POST">
-                <label for="name-input">Название товара</label>
+                <label  for="name-input">Название товара</label>
                     <input class="str_input" type="text" name="name-input" value="<?= $row['NAME']?>" required/>
                 <br/>
                 <label for="price-input">Цена</label>

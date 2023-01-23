@@ -126,7 +126,7 @@ a{
     list-style: none;
     align-items:center;
     display: flex;
-    justify-content:start;
+    justify-content:space-between;
     flex-wrap: wrap;
 }
 #goods ul li{

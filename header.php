@@ -4,14 +4,14 @@
     require_once(getUrl('err'));
 ?>
 <div class="logo">
-    <img src="images/Logo.png">
+    <img src="images/Logo.png" alt="name-input">
 </div>
 <div class="menu-block">
     <div id="up-menu">
-        <form class="search" action="search.php" method="POST">
+        <div class="search">
             <input type="text" name="search_query" id="main-search" />
-            <input type="submit" value="поиск" id="run-search">
-        </form>
+            <input type="submit" value="поиск" id="run-search" />
+        </div>
         <div class="cabinet">
             <a href="<?php
                     if(isset($_SESSION['auth'])){
@@ -21,7 +21,7 @@
                         session_destroy();
                         echo getUrl('login');
                     }
-                     ?>"><img src="images/cabinet.png"></a>
+                     ?>"><img src="images/cabinet.png" alt="name-input"></a>
         </div>
     </div>
     <div class="menu">
@@ -41,7 +41,7 @@
                 else{
                     echo getUrl('login');
                 }
-                ?>"><img src="images/liked.png"></a></li>
+                ?>"><img src="images/liked.png" alt="name-input"></a></li>
             <li id="menu-icons"><a href="<?php
                 if(isset($_SESSION['auth'])){
                     echo getUrl('cart');
@@ -49,8 +49,8 @@
                 else{
                     echo getUrl('login');
                 }
-                ?>"><img src="images/cart.png"></a></li>
+                ?>"><img src="images/cart.png" alt="name-input"></a></li>
         </ul>
     </div>
 </div>
-</header>
+

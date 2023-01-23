@@ -1,14 +1,12 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 
-<html>
+<html lang="ru">
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/Header_style.css" >
     <link rel="stylesheet" href="styles/Main_style.css" >
     <link rel="stylesheet" href="styles/Footer_style.css" >
-
-    <link rel="stylesheet" href="styles/cabinet_style.css_style.css" >
 
     <title>in progress</title>
 </head>
@@ -30,7 +28,7 @@
                     ?>
                     <li>
                         <div>
-                            <img src="images/images.jpg">
+                            <img src="images/images.jpg" alt="name-input">
                             <p><?= $row['NAME']?></p>
                             <p><?= $row['price']?></p>
                             <button class="buy-button">Купить</button>

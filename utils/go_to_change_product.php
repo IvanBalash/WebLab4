@@ -7,4 +7,4 @@
         header ( 'Location: '. '../' . getUrl('changeProduct'));
         exit();
     }
-?>
+

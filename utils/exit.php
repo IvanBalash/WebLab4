@@ -6,4 +6,3 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
 }
 header ( 'Location: '. '../' . getUrl('home') );  // перенаправление на нужную страницу
 exit();
-?>

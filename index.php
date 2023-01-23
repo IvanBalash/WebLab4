@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="ru">
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/Header_style.css" >
@@ -17,10 +17,10 @@
         </header>
         <main>
             <div id="ad">
-                <button class="ad-button" id="previous"><img src="images\image 3.png" /></button>
-                <button class="ad-button" id="next"><img src="images\image 2.png" /></button>
+                <button class="ad-button" id="previous"><img src="images/image 3.png"  alt="nothing"/></button>
+                <button class="ad-button" id="next"><img src="images/image 2.png" alt="nothing"/></button>
             </div>
-            <div id="shop" name="catalog"><a name="catalog"></a>
+            <div id="shop"><a id="catalog"></a>
                 <div id="settings">
                     <div class="settings-block">
                         <h2>каегории</h2>
@@ -35,9 +35,13 @@
                         <h2>фильтер</h2>
                         <div id="price-filter-block">
                             <p>цена от</p>
-                            <input type="number" name="min-price" class="price-filter-input" />
+                            <label for="min-price"></label>
+                                <input type="number" name="min-price" class="price-filter-input" />
+
                             <p>до</p>
-                            <input type="number" name="max-price" class="price-filter-input" />
+                            <label for="max-price"></label>
+                                <input type="number" name="max-price" class="price-filter-input" />
+
                         </div>
                         <ul>
                             <li><button class="settings-button">бренд</button></li>
@@ -76,7 +80,7 @@
                                 <li>
                                     <div>
 
-                                        <img src="images/images.jpg">
+                                        <img src="images/images.jpg" alt="nothing">
                                         <p><?= $row['NAME']?></p>
                                         <p><?= $row['price']?></p>
                                         <form action="utils/add_to_cart.php" method="POST">

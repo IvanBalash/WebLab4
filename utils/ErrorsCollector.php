@@ -1,19 +1,21 @@
 <?php
 
 class ErrorsCollector{
-    private $errors = array();
+    private array $errors = array();
 
-    public function addError($errMessage){
-        array_push($this->errors, $errMessage);
+    public function addError($errMessage): void
+    {
+        $this->errors[] = $errMessage;
     }
 
-    public function getErrors(){
+    public function getErrors(): array
+    {
         return $this->errors;
     }
 
-    public function hasErrors(){
+    public function hasErrors(): bool
+    {
         return count($this->errors) !== 0;
     }
 }
 
-?>
